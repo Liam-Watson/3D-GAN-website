@@ -5,16 +5,20 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Hyperspace by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-		<script async="" src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
-		<script type="importmap">
+
+<head>
+	<title>Hyperspace by HTML5 UP</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+	<script async="" src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+	<script type="importmap">
 			{
 				"imports": {
 					"three": "./threejs/build/three.module.js",
@@ -22,231 +26,258 @@
 				}
 			}
 		</script>
-		<script type="module" src="./main.js"></script>
-		<!-- Sidebar -->
-			<section id="sidebar">
-				<div class="inner">
-					<nav>
-						<ul>
-							<li><a href="#intro">Welcome</a></li>
-							<li><a href="#zero">Demo</a></li>
-							<li><a href="#overview">Overview</a></li>
-							<li><a href="#one">GANs</a></li>
-							<li><a href="#two">Resources</a></li>
-							<li><a href="#team">Team</a></li>
-							<!-- <li><a href="#three">Get in touch</a></li> -->
-						</ul>
-					</nav>
-				</div>
-			</section>
+	<script type="module" src="./main.js"></script>
+	<!-- Sidebar -->
+	<section id="sidebar">
+		<div class="inner">
+			<nav>
+				<ul>
+					<li><a href="#intro">Welcome</a></li>
+					<li><a href="#zero">Demo</a></li>
+					<li><a href="#overview">Overview</a></li>
+					<li><a href="#one">GANs</a></li>
+					<li><a href="#two">Resources</a></li>
+					<li><a href="#team">Team</a></li>
+					<!-- <li><a href="#three">Get in touch</a></li> -->
+				</ul>
+			</nav>
+		</div>
+	</section>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+	<!-- Wrapper -->
+	<div id="wrapper">
 
-				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
-						<div class="inner">
-							<h1>3D-GAN</h1>
-							<p>A point cloud solution to 3D face generation using generative adversarial networks.</p>
-							<ul class="actions">
-								<li><a href="#zero" class="button scrolly">Learn more</a></li>
-							</ul>
-						</div>
-					</section>
+		<!-- Intro -->
+		<section id="intro" class="wrapper style1 fullscreen fade-up">
+			<div class="inner">
+				<h1>3D-GAN</h1>
+				<p>A point cloud solution to 3D face generation using generative adversarial networks.</p>
+				<ul class="actions">
+					<li><a href="#zero" class="button scrolly">Learn more</a></li>
+				</ul>
+			</div>
+		</section>
 
-				<!-- Zero -->
-				<section id="zero" class="wrapper style1 spotlights">
-					<div id="threejs" style="position:relative; width: 100%; height: 100%;"></div>
-					
-				</section>
+		<!-- Zero -->
+		<section id="zero" class="wrapper style1 spotlights">
+			<div id="threejs" style="position:relative; width: 100%; height: 100%;"></div>
 
-				<section id="overview" class="wrapper style1 fade-up">
-					<div class="inner">
-					  <h2>Overview</h2>
-					  <div class="row">
-						<div class="col-12-medium">
-						  <p>
-							Problems encountered historically had to be solved by a hand crafted technique which has given rise
-							to many efficient algorithms. However, such solutions can often be highly complex and difficult to
-							implement. In recent years, the advent of deep learning has given rise to a new class of algorithms
-							which can be trained to solve a wide range of problems. 
-						  </p>
-						  <p>
-							Deep learning fields that involve classification or prediction problems have been highly studied, but, 
-							only recently have researchers started to focus on generative applications. Many generative models 
-							exist having displayed remarkable results in image generation, text generation, and music generation.
-							Examples of such models include StyleGAN, WaveNet and DALL-E. However, such models have been limited to
-							low dimensional generation tasks. 
-						  </p>
-						  <p>
-							The solutions proposed in the three sibling papers introduced extend the 
-							remarkable generation capabilities of GANs to 3D point clouds. Each paper focuses on a different
-							GAN architecture namely: Controllable GAN, Conditional GAN and Progressive GAN. The controllable and Conditional
-							GANs achieve expression control while the progressive GAN seeks to achieve higher fidelity results. 
-						  </p>
-						</div>
-			
-						<!-- <div class="col-6 col-12-medium">
+		</section>
+
+		<section id="overview" class="wrapper style1 fade-up">
+			<div class="inner">
+				<h2>Overview</h2>
+				<div class="row">
+					<div class="col-12-medium">
+						<p>
+							Problems encountered historically had to be solved by a hand crafted technique which has
+							given rise
+							to many efficient algorithms. However, such solutions can often be highly complex and
+							difficult to
+							implement. In recent years, the advent of deep learning has given rise to a new class of
+							algorithms
+							which can be trained to solve a wide range of problems.
+						</p>
+						<p>
+							Deep learning fields that involve classification or prediction problems have been highly
+							studied, but,
+							only recently have researchers started to focus on generative applications. Many generative
+							models
+							exist having displayed remarkable results in image generation, text generation, and music
+							generation.
+							Examples of such models include StyleGAN, WaveNet and DALL-E. However, such models have been
+							limited to
+							low dimensional generation tasks.
+						</p>
+						<p>
+							The solutions proposed in the three sibling papers introduced extend the
+							remarkable generation capabilities of GANs to 3D point clouds. Each paper focuses on a
+							different
+							GAN architecture namely: Controllable GAN, Conditional GAN and Progressive GAN. The
+							controllable and Conditional
+							GANs achieve expression control while the progressive GAN seeks to achieve higher fidelity
+							results.
+						</p>
+					</div>
+
+					<!-- <div class="col-6 col-12-medium">
 						  <div class="tradingview-widget-container" style="width: 100%; height: 95%;">
 							<iframe scrolling="no" allowtransparency="true" frameborder="0" src="https://s.tradingview.com/embed-widget/mini-symbol-overview/?locale=en#%7B%22symbol%22%3A%22JSE%3ANPN%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A%2295%25%22%2C%22dateRange%22%3A%2212M%22%2C%22colorTheme%22%3A%22dark%22%2C%22trendLineColor%22%3A%22%23327aff%22%2C%22underLineColor%22%3A%22rgba(41%2C%2098%2C%20255%2C%200.3)%22%2C%22underLineBottomColor%22%3A%22rgba(41%2C%2098%2C%20255%2C%200)%22%2C%22isTransparent%22%3Atrue%2C%22autosize%22%3Atrue%2C%22largeChartUrl%22%3A%22%22%2C%22utm_source%22%3A%22projects.cs.uct.ac.za%22%2C%22utm_medium%22%3A%22widget%22%2C%22utm_campaign%22%3A%22mini-symbol-overview%22%7D" style="box-sizing: border-box; height: 95%; width: 100%;"></iframe>
 							
 						 </div>
 						</div> -->
-					  </div>
-					</div>
-				  </section>
+				</div>
+			</div>
+		</section>
 
-				<!-- One -->
-					<section id="one" class="wrapper style1 spotlights">
-						
-						<section>
-							<a href="#" class="image"><img src="images/simpleArch.png" alt="" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Controllable GAN</h2>
-									<p>A controllable GAN is designed to allow for fine-grained and incremental control over the GAN output.
-										 It does this by using a pre-trained classifier to inform changes to the noise input of the generator
-										  to explore the latent space and thus manipulate features. PCE-GAN is a controllable GAN where the
-										   generator is taken from a general GAN that can generate 3D faces, and the PointNet classifier is
-										    used to control traversal within latent space. The control was applied to the face's expression
-											 leaving the identity of the face uncontrolled. This allows generation of faces with a specific
-											  expression as well as expression strength control and temporally consistent expression 
-											  interpolation. The image below displays the traversal from a neutral to an open mouth expression
-											   by using the classifier to incrementally update the noise. </p>
-									<ul class="actions">
-										<li><a href="controllalbe.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/3DEC-GAN.png" alt="" data-position="top center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Conditional GAN</h2>
-									<p>The 3D Expression Conditional GAN (3DEC-GAN) is a network designed to generate faces while
-										 applying coarse-grained control over the output. Conditional GANs function via the use of
-										  labels; the training data is labeled and the user is then able to provide the model
-										   with a label that defines some property of the output. In the case of 3DEC-GAN, the
-										    label value corresponds to the expression of the face. This resulted in a model which
-											 can generate a face with either neutral, mouth open, cheeks in, or bare teeth expression.
-											  It was achieved by concatenating conditional information vectors onto the generator and
-											   discriminator of a GAN that can generate a geneal 3D face.</p>
-									<ul class="actions">
-										<li><a href="conditional.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/progan1.png" alt="" data-position="25% 25%" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Progressive GAN</h2>
-									<p>Progressive GANs are built around the idea of progressive growing the GAN from producing 
-										low-resolution output to a high-resolution output. They learn a concept the same way we would
-										 learn a concept such as maths, starting out with the basics and building on them. The 3D-ProGAN
-										  starts out with a resolution of 512 vertices, which is then progressively grown to 1024 vertices.
-										   Where the number of vertices represents the size of the outputted point cloud. The GAN is progressively
-										    grown using skip connections, up-sampling and down-sampling. Adding a single progressive layer seemed
-											 to increase the quality of the face generated as can be seen in the qualitative comparison below.</p>
-									<ul class="actions">
-										<li><a href="progressive.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
+		<!-- One -->
+		<section id="one" class="wrapper style1 spotlights">
+
+			<section>
+				<a href="#" class="image"><img src="images/simpleArch.png" alt="" data-position="center center" /></a>
+				<div class="content">
+					<div class="inner">
+						<h2>Controllable GAN</h2>
+						<p>A controllable GAN is designed to allow for fine-grained and incremental control over the GAN
+							output.
+							It does this by using a pre-trained classifier to inform changes to the noise input of the
+							generator
+							to explore the latent space and thus manipulate features. PCE-GAN is a controllable GAN
+							where the
+							generator is taken from a general GAN that can generate 3D faces, and the PointNet
+							classifier is
+							used to control traversal within latent space. The control was applied to the face's
+							expression
+							leaving the identity of the face uncontrolled. This allows generation of faces with a
+							specific
+							expression as well as expression strength control and temporally consistent expression
+							interpolation. The image below displays the traversal from a neutral to an open mouth
+							expression
+							by using the classifier to incrementally update the noise. </p>
+						<ul class="actions">
+							<li><a href="controllalbe.html" class="button">Learn more</a></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section>
+				<a href="#" class="image"><img src="images/3DEC-GAN.png" alt="" data-position="top center" /></a>
+				<div class="content">
+					<div class="inner">
+						<h2>Conditional GAN</h2>
+						<p>The 3D Expression Conditional GAN (3DEC-GAN) is a network designed to generate faces while
+							applying coarse-grained control over the output. Conditional GANs function via the use of
+							labels; the training data is labeled and the user is then able to provide the model
+							with a label that defines some property of the output. In the case of 3DEC-GAN, the
+							label value corresponds to the expression of the face. This resulted in a model which
+							can generate a face with either neutral, mouth open, cheeks in, or bare teeth expression.
+							It was achieved by concatenating conditional information vectors onto the generator and
+							discriminator of a GAN that can generate a geneal 3D face.</p>
+						<ul class="actions">
+							<li><a href="conditional.html" class="button">Learn more</a></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section>
+				<a href="#" class="image"><img src="images/progan.png" alt="" data-position="25% 25%" /></a>
+				<div class="content">
+					<div class="inner">
+						<h2>Progressive GAN</h2>
+						<p>Progressive GANs are built around the idea of progressive growing the GAN from producing
+							low-resolution output to a high-resolution output. They learn a concept the same way we
+							would
+							learn a concept such as maths, starting out with the basics and building on them. The
+							3D-ProGAN
+							starts out with a resolution of 512 vertices, which is then progressively grown to 1024
+							vertices.
+							Where the number of vertices represents the size of the outputted point cloud. The GAN is
+							progressively
+							grown using skip connections, up-sampling and down-sampling. Adding a single progressive
+							layer seemed
+							to increase the quality of the face generated as can be seen in the qualitative comparison
+							below.</p>
+						<ul class="actions">
+							<li><a href="progressive.html" class="button">Learn more</a></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+		</section>
+
+		<!-- Two -->
+		<section id="two" class="wrapper style1 fade-up">
+			<div class="inner">
+				<h2>Resources</h2>
+				<!-- <p>A list of relat</p> -->
+				<div class="features">
+					<section>
+						<span class="icon solid major fa-code"></span>
+						<h3>Paper</h3>
+						<p>Liam Watson</p>
+						<ul class="actions">
+							<li>
+								<a href="images/pdfs/" target="_blank" rel="noopenner" class="button">Download</a>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<span class="icon solid major fa-cog"></span>
+						<h3>Literature Review</h3>
+						<p>Liam Watson</p>
+						<ul class="actions">
+							<li>
+								<a href="images/pdfs/" target="_blank" rel="noopenner" class="button">Download</a>
+							</li>
+						</ul>
 					</section>
 
-				<!-- Two -->
-					<section id="two" class="wrapper style1 fade-up">
-						<div class="inner">
-							<h2>Resources</h2>
-							<!-- <p>A list of relat</p> -->
-							<div class="features">
-								<section>
-									<span class="icon solid major fa-code"></span>
-									<h3>Paper</h3>
-									<p>Liam Watson</p>
-									<ul class="actions">
-										<li>
-										  <a href="images/pdfs/" target="_blank" rel="noopenner" class="button">Download</a>
-										</li>
-									  </ul>
-								</section>
-								<section>
-									<span class="icon solid major fa-cog"></span>
-									<h3>Literature Review</h3>
-									<p>Liam Watson</p>
-									<ul class="actions">
-										<li>
-										  <a href="images/pdfs/" target="_blank" rel="noopenner" class="button">Download</a>
-										</li>
-									  </ul>
-								</section>
-
-								<section>
-									<span class="icon solid major fa-code"></span>
-									<h3>Paper</h3>
-									<p>Luc van Den Handel</p>
-									<ul class="actions">
-										<li>
-										  <a href="images/pdfs/VHNLUC001_FinalReport.pdf" target="_blank" rel="noopenner" class="button">Download</a>
-										</li>
-									  </ul>
-								</section>
-								<section>
-									<span class="icon solid major fa-cog"></span>
-									<h3>Literature Review</h3>
-									<p>Luc van Den Handel</p>
-									<ul class="actions">
-										<li>
-										  <a href="images/pdfs/LiteratureReview_LucVanDenHandel.pdf" target="_blank" rel="noopenner" class="button">Download</a>
-										</li>
-									  </ul>
-								</section>
+					<section>
+						<span class="icon solid major fa-code"></span>
+						<h3>Paper</h3>
+						<p>Luc van Den Handel</p>
+						<ul class="actions">
+							<li>
+								<a href="images/pdfs/VHNLUC001_FinalReport.pdf" target="_blank" rel="noopenner"
+									class="button">Download</a>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<span class="icon solid major fa-cog"></span>
+						<h3>Literature Review</h3>
+						<p>Luc van Den Handel</p>
+						<ul class="actions">
+							<li>
+								<a href="images/pdfs/LiteratureReview_LucVanDenHandel.pdf" target="_blank"
+									rel="noopenner" class="button">Download</a>
+							</li>
+						</ul>
+					</section>
 
 
-								<section>
-									<span class="icon solid major fa-code"></span>
-									<h3>Paper</h3>
-									<p>Sebastian Oliver</p>
-									<ul class="actions">
-										<li>
-										  <a href="images/pdfs/OLVSEB001_FinalPaper.pdf" target="_blank" rel="noopenner" class="button">Download</a>
-										</li>
-									  </ul>
-								</section>
-								<section>
-									<span class="icon solid major fa-cog"></span>
-									<h3>Literature Review</h3>
-									<p>Sebastian Oliver</p>
-									<ul class="actions">
-										<li>
-										  <a href="images/pdfs/OLVSEB001_SebastianOliver-LiteratureReview.pdf" target="_blank" rel="noopenner" class="button">Download</a>
-										</li>
-									  </ul>
-								</section>
-								<section style="width: 100%; text-align: center;">
-									<!-- <span class="icon solid major fa-code" ></span> -->
-									<h3>Research Proposal</h3>
-									<p>All</p>
-									<ul class="actions" style="margin: 0 auto; display: inline-block;">
-										<li>
-										  <a href="#" target="_blank" rel="noopenner" class="button">Download</a>
-										</li>
-									  </ul>
-								</section>
-								
-							</div>
-							<!-- <ul class="actions">
+					<section>
+						<span class="icon solid major fa-code"></span>
+						<h3>Paper</h3>
+						<p>Sebastian Oliver</p>
+						<ul class="actions">
+							<li>
+								<a href="images/pdfs/OLVSEB001_FinalPaper.pdf" target="_blank" rel="noopenner"
+									class="button">Download</a>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<span class="icon solid major fa-cog"></span>
+						<h3>Literature Review</h3>
+						<p>Sebastian Oliver</p>
+						<ul class="actions">
+							<li>
+								<a href="images/pdfs/OLVSEB001_SebastianOliver-LiteratureReview.pdf" target="_blank"
+									rel="noopenner" class="button">Download</a>
+							</li>
+						</ul>
+					</section>
+					<section style="width: 100%; text-align: center;">
+						<!-- <span class="icon solid major fa-code" ></span> -->
+						<h3>Research Proposal</h3>
+						<p>All</p>
+						<ul class="actions" style="margin: 0 auto; display: inline-block;">
+							<li>
+								<a href="#" target="_blank" rel="noopenner" class="button">Download</a>
+							</li>
+						</ul>
+					</section>
+
+				</div>
+				<!-- <ul class="actions">
 								<li><a href="generic.html" class="button">Learn more</a></li>
 							</ul> -->
-						</div>
-					</section>
+			</div>
+		</section>
 
-					<!-- Team -->
-					<!-- <section id="team" class="wrapper style1 fade-up">
+		<!-- Team -->
+		<!-- <section id="team" class="wrapper style1 fade-up">
 						<div class="inner">
 							<h2>Team</h2>
 							<p>The three techniques were developed in paralell by the following team members.</p>
@@ -273,77 +304,84 @@
 						</div>
 					</section> -->
 
-					<section id="team" class="wrapper style1 fade-up">
-						<div class="inner">
-						  <h2>Team</h2>
-						  <div class="split style1">
-							<section>
-							  <form>
-								<div class="fields">
-								  <div class="field half">
+		<section id="team" class="wrapper style1 fade-up">
+			<div class="inner">
+				<h2>Team</h2>
+				<div class="split style1">
+					<section>
+						<form>
+							<div class="fields">
+								<div class="field half">
 									<span class="icon fa-user">&nbsp;&nbsp;Liam Watson</span>
 									<br>
 									<span class="icon fa-user">&nbsp;&nbsp;Luc van Den Handel</span>
 									<br>
 									<span class="icon fa-user">&nbsp;&nbsp;Sebastian Oliver</span>
-								  </div>
-								  <div class="field half">
-									<a href="mailto:liam@watson.org.za" class="icon fa-envelope"><span>&nbsp;&nbsp;liam@watson.org.za</span></a>
-									<br>
-									<a href="mailto:vhnluc001@myuct.ac.za" class="icon fa-envelope"><span>&nbsp;&nbsp;vhnluc001@myuct.ac.za</span></a>
-									<br>
-									<a href="mailto:olvseb001@myuct.ac.za" class="icon fa-envelope"><span>&nbsp;&nbsp;olvseb001@myuct.ac.za</span></a>
-								  </div>
-								  <div class="field">
-									<label for="name">Supervisor</label>
-									Associate Professor Deshendran Moodley <br><a href="https://www.cair.org.za/"><b>Center for Artificial Intelligence Research</b></a>
-								  </div>
 								</div>
-							  </form>
-							</section>
-							<section>
-							  <ul class="contact">
-								<li>
-								  <h3>University of Cape Town</h3>
-								  <span>Department of Computer Science</span>
-								</li>
-								<li>
-								  <h3>Email</h3>
-								  <a href="mailto:dept@cs.uct.ac.za">dept@cs.uct.ac.za</a>
-								</li>
-								<li>
-								  <h3>Website</h3>
-								  <a href="http://www.cs.uct.ac.za">cs.uct.ac.za</a>
-								</li>
-								<li>
-								  <h3>Phone</h3>
-								  <span>+27 21 650 2663</span>
-								</li>
-							  </ul>
-							</section>
-						  </div>
-						</div>
-					  </section>
-
-			</div>
-
-		<!-- Footer -->
-			<footer id="footer" class="wrapper style1">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
+								<div class="field half">
+									<a href="mailto:liam@watson.org.za"
+										class="icon fa-envelope"><span>&nbsp;&nbsp;liam@watson.org.za</span></a>
+									<br>
+									<a href="mailto:vhnluc001@myuct.ac.za"
+										class="icon fa-envelope"><span>&nbsp;&nbsp;vhnluc001@myuct.ac.za</span></a>
+									<br>
+									<a href="mailto:olvseb001@myuct.ac.za"
+										class="icon fa-envelope"><span>&nbsp;&nbsp;olvseb001@myuct.ac.za</span></a>
+								</div>
+								<div class="field">
+									<label for="name">Supervisor</label>
+									Associate Professor Deshendran Moodley <br><a
+										href="https://www.cair.org.za/"><b>Center for Artificial Intelligence
+											Research</b></a>
+								</div>
+							</div>
+						</form>
+					</section>
+					<section>
+						<ul class="contact">
+							<li>
+								<h3>University of Cape Town</h3>
+								<span>Department of Computer Science</span>
+							</li>
+							<li>
+								<h3>Email</h3>
+								<a href="mailto:dept@cs.uct.ac.za">dept@cs.uct.ac.za</a>
+							</li>
+							<li>
+								<h3>Website</h3>
+								<a href="http://www.cs.uct.ac.za">cs.uct.ac.za</a>
+							</li>
+							<li>
+								<h3>Phone</h3>
+								<span>+27 21 650 2663</span>
+							</li>
+						</ul>
+					</section>
 				</div>
-			</footer>
+			</div>
+		</section>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+	</div>
 
-	</body>
+	<!-- Footer -->
+	<footer id="footer" class="wrapper style1">
+		<div class="inner">
+			<ul class="menu">
+				<li>&copy; Untitled. All rights reserved.</li>
+				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
 </html>
