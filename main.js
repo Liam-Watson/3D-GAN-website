@@ -5,17 +5,20 @@ import {OrbitControls} from './threejs/examples/jsm/controls/OrbitControls.js';
 const scene = new THREE.Scene();
 var ambientLight = new THREE.AmbientLight( 0xcccccc, 0.4 );
 scene.add( ambientLight );
+// const camera = new THREE.OrthographicCamera( window.innerWidth.width / - 2, window.innerWidth.width / 2, window.innerHeight.height / 2, window.innerHeight.height / - 2, 0.001, 1000 );
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-const light = new THREE.PointLight( 0xffffff, 1, 100);
+const light = new THREE.PointLight( 0xffffff, 1, 2000);
 light.position.set( 50, 50, 50 );
 scene.add( light );
+const softLight = new THREE.AmbientLight( 0x404040, 2); // soft white light
+scene.add( softLight );
 const renderer = new THREE.WebGLRenderer({ alpha: true });
 renderer.setSize( window.innerWidth, window.innerHeight );
 renderer.setClearColor( 0x000000, 0 ); // the default
 // document.body.appendChild( renderer.domElement );
 document.getElementById("threejs").appendChild(renderer.domElement);
 const controls = new OrbitControls( camera, renderer.domElement );
-
+const controls2 = new OrbitControls( light, renderer.domElement );
 
 const geometry = new THREE.BoxGeometry( 1, 1, 1 );
 // const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
