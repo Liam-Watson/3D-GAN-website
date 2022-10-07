@@ -28,7 +28,7 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
 :root {
-	--c1: #2A363B;
+	--c1: #3b2a2a;
 	--c2: #E84A5F;
 	--c3: #FF847C;
 	--c4: #FECEA8;
@@ -3027,7 +3027,7 @@ input, select, textarea {
 				-webkit-transition: opacity 1s ease;
 				-ms-transition: opacity 1s ease;
 				transition: opacity 1s ease;
-				background: rgba(218, 172, 86, 0.9);
+				background: rgba(72, 36, 36, 0.9);
 				content: '';
 				display: block;
 				height: 100%;
