@@ -31,10 +31,13 @@ footer, header, hgroup, menu, nav, section {
 	/* --c1: #3b2a2a;
 	--c2: #E84A5F;
 	--c3: #FF847C; */
-	--c1: #2c4f63;
-	--c2: #ff0022;
+	--c1: #27295d;
+	--c2: #0004ff;
+	--c3: #0080ff;
+	--c4: #a8acfe;
+	/* --c2: #ff0022;
 	--c3: #ff8800;
-	--c4: #FECEA8;
+	--c4: #FECEA8; */
 }
 body {
 	line-height: 1;
