@@ -44,9 +44,16 @@ function load(path){
     loader.load(path, obj => {
         obj.computeVertexNormals();
         mesh = new THREE.Mesh(obj, material)
-        mesh.scale.x = 17;
-        mesh.scale.y = 17;
-        mesh.scale.z = 17;
+        if(path == "images/models/untitled.ply"){
+            mesh.scale.x = 10;
+            mesh.scale.y = 10;
+            mesh.scale.z = 10;
+        }else{
+            mesh.scale.x = 17;
+            mesh.scale.y = 17;
+            mesh.scale.z = 17;
+        }
+        
         scene.add(mesh);
     });
     // controls.autoRotateSpeed = 1;
@@ -56,16 +63,16 @@ function loadpcd(path){
     loaderpcd.load(path, obj => {
         // obj.computeVertexNormals();
         // console.log(obj.Points,material2);
-        obj.scale.x = 20;
-        obj.scale.y = 20;
-        obj.scale.z = 20;
+        obj.scale.x = 17;
+        obj.scale.y = 17;
+        obj.scale.z = 17;
         mesh = new THREE.Points( obj.geometry, material2 );
         // mesh = new THREE.Mesh(obj, material)
         console.log(obj)
         // mesh = obj;
-        mesh.scale.x = 20;
-        mesh.scale.y = 20;
-        mesh.scale.z = 20;
+        mesh.scale.x = 17;
+        mesh.scale.y = 17;
+        mesh.scale.z = 17;
         scene.add(mesh);
     });
     // controls.autoRotateSpeed = 1;
@@ -126,6 +133,8 @@ function onDocumentKeyDown(event) {
         scene.remove(mesh);
         if(paths[counter].split(".")[1] == "pcd"){
             loadpcd(paths[counter]);
+            
+        
         }else{
             load(paths[counter])
         }
