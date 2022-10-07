@@ -95,6 +95,7 @@ document.addEventListener("keyup", (e) =>{
 }, false);
 let counter = 0;
 const paths = [
+    'images/models/untitled.ply',
     'images/models/tmpF0.ply',
     'images/models/tmp0.pcd',
     'images/models/tmpF1.ply',

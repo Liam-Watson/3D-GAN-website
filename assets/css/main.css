@@ -28,9 +28,12 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
 :root {
-	--c1: #3b2a2a;
+	/* --c1: #3b2a2a;
 	--c2: #E84A5F;
-	--c3: #FF847C;
+	--c3: #FF847C; */
+	--c1: #2c4f63;
+	--c2: #ff0022;
+	--c3: #ff8800;
 	--c4: #FECEA8;
 }
 body {
@@ -3027,7 +3030,7 @@ input, select, textarea {
 				-webkit-transition: opacity 1s ease;
 				-ms-transition: opacity 1s ease;
 				transition: opacity 1s ease;
-				background: rgba(72, 36, 36, 0.9);
+				background: rgba(36, 44, 72, 0.9);
 				content: '';
 				display: block;
 				height: 100%;
