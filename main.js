@@ -19,6 +19,8 @@ renderer.setClearColor( 0x000000, 0 ); // the default
 document.getElementById("threejs").appendChild(renderer.domElement);
 const controls = new OrbitControls( camera, renderer.domElement );
 const controls2 = new OrbitControls( light, renderer.domElement );
+controls.enableZoom = false;
+controls2.enableZoom = false;
 // controls.autoRotate = true;
 // controls2.autoRotate = true;
 
@@ -55,6 +57,17 @@ document.getElementsByTagName("canvas")[0].style.width = "100%"
 document.getElementsByTagName("canvas")[0].style.height = "100%"
 
 document.addEventListener("keydown", onDocumentKeyDown, false);
+
+document.addEventListener("keyup", (e) =>{
+    console.log(e)
+    if(e.key == 'Shift'){
+        controls.enableZoom = false;
+        controls2.enableZoom = false;
+        controls.update()
+        controls2.update()
+    }
+}, false);
+
 let counter = 0;
 const paths = ["images/models/untitled.ply", "face.ply"];
 load(paths[counter])
@@ -66,6 +79,9 @@ function onDocumentKeyDown(event) {
         scene.remove(mesh);
         load(paths[counter])
         animate();
+    }else if(keyCode == 16){
+        controls.enableZoom = true;
+        controls2.enableZoom = true;
     }
     
 }
