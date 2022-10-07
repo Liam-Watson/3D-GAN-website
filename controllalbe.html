@@ -6,37 +6,209 @@
 -->
 <html>
 	<head>
-		<title>3DEC-GAN</title>
+		<title>PCE-GAN</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script async="" src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+	<script type="importmap">
+			{
+				"imports": {
+					"three": "./threejs/build/three.module.js",
+					"three/addons/": "./jsm/"
+				}
+			}
+		</script>
+		<script type="module" src="./controllableFaces.js"></script>
 	</head>
 	<body class="is-preload">
 
 		<!-- Header -->
 			<header id="header">
-				<a href="index.html" class="title">Hyperspace</a>
+				<a href="index.html" class="title">PCE-GAN</a>
 				<nav>
 					<ul>
 						<li><a href="index.html">Home</a></li>
-						<li><a href="generic.html" class="active">Generic</a></li>
-						<li><a href="elements.html">Elements</a></li>
+						<li><a href="generic.html" class="active">Controllable GAN</a></li>
+						<li><a href="conditional.html">Conditional GAN</a></li>
+						<li><a href="progressive.html">Progressive GAN</a></li>
 					</ul>
 				</nav>
 			</header>
-
+			
 		<!-- Wrapper -->
 			<div id="wrapper">
 
 				<!-- Main -->
 					<section id="main" class="wrapper">
 						<div class="inner">
-							<h1 class="major">A Generic Page</h1>
-							<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>
-							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+							
+							<h1 class="major">Controllable Point Cloud Expression GAN</h1>
+							<h2>Overview</h2>
+							<p>Controllable GANs are an extension to the vanilla Generative Adversarial Network architecture which enables 
+								unsupervised feature controlled content generation. The normative structure leverages the knowledge embedded in a
+								pretrained classifier to control the features of generated output. The classifier is used to manipulate the
+								latent noise vector to move in the direction of a desired feature within the generators input latent space. In the case of
+								PCE-GAN we employ a PointNet classifier trained on various point cloud facial expressions and a modified DCGAN 
+								to generate point cloud faces.  
+							</p>
+							<hr>
+							<h2>Modified DCGAN</h2>
+							<p>Deep Convolutional GANs leverage the modelling power granted by convolutional layers. Typically convolutional 
+								are used in the context of 2D image generation. However, a similar architecture can be adapted to 3D point cloud
+								data. The modified DCGAN architecture is shown below. The model consists of 5 one dimensional convolutional layers for the generator 
+								and seven one dimensional convolutional layers for the discriminator. The 1D convolutions are well suited for point cloud data as they
+								are able to treat the list of (x,y,z) coordinates as a 1D signal with 3 channels - analogous to color channels in a 2D image.  
+
+							</p>
+							<span class="image fit"><img src="images/DCGAN_PC.drawio.png" alt="" /></span>
+							<h2>PCE-GAN</h2>	
+							<p>
+								The PCE-GAN architecture is shown below. The model consists of a modified DCGAN generator and discriminator, a pretrained PointNet classifier
+								and a modified latent noise vector. The latent noise vector is modified by the classifier to move in the direction of a desired feature. 
+								The classifier is used to generate a feature vector which is then used to modify the latent noise vector. The modified latent noise vector is then
+								used as input to the generator to generate a point cloud face.
+							</p>
+							<span class="image fit"><img src="images/pceGANarch3.png" alt="" /></span>
+							<hr>
+							<h2>Results</h2>
+							<p>
+								It is important for this work to consider both quantitative and qualitative results. 
+								Quantitative results are important to remove bias and have an objective comparison measure for future works. 
+								However qualitative results are vital as humans are especially sensitive to subtle changes in facial expressions
+								and as such are able to provide a more practical evaluation of the models performance.
+							</p>
+							<h3>Quantitative Results</h3>
+							<p>The below table shows the quantatative metrics for results generated before adding any latent vector control.
+								Included in these results are two comparison papers namely CoMA autoencoder and MeshGAN. 
+							</p>
+							<div class="table-wrapper">
+								<div class="alt">
+									<table>
+										<thead>
+											<tr>
+												<th>Method</th>
+												<th>Generalization (mm)</th>
+												<th>Specificity (mm)</th>
+												<th>FID</th>
+											</tr>
+											
+										</thead>
+										<tbody>
+											<tr>
+												<td>CoMA</td>
+												<td><b>0.442 ± 0.116</b></td>
+												<td>1.60 ± 0.22</td>
+												<td>14.24</td>
+											</tr>
+											<tr>
+												<td>MeshGAN</td>
+												<td>0.465 ± 0.189</td>
+												<td>1.433 ± 0.14 </td>
+												<td><b>10.82</b></td>
+											</tr>
+											<tr>
+												<td>PCE-GAN</td>
+												<td>0.747 ± 0.0163</td>
+												<td><b>0.809 ± 0.0334</b></td>
+												<td>13.27</td>
+											</tr>
+											
+										</tbody>
+									</table>
+									
+								</div>
+								
+							</div>
+							<div class="table-wrapper">
+								<div class="alt">
+									<table>
+										<thead>
+											<tr>
+												<th>Expression</th>
+												<th>Generalization (mm)</th>
+												<th>Specificity (mm)</th>
+												<th>KID</th>
+												<th>FID</th>
+											</tr>
+											
+										</thead>
+										<tbody>
+											<tr>
+												<td>Bare teeth</td>
+												
+												<td>1.161 ± 0.157</td>
+												<td>0.8788 ± 0.2698</td>
+												<td>0.87</td>
+												<td>16.59</td>
+											</tr>
+											<tr>
+												<td>Cheeks in</td>
+												
+												<td>1.329 ± 0.006</td>
+												<td>1.162 ± 0.384</td>
+												<td>0.63</td>
+												<td>15.48</td>
+											</tr>
+											<tr>
+												<td>Mouth Open</td>
+												
+												<td><b>0.957 ± 0.148 </b></td>
+												<td><b>0.7610 ± 0.1662</b></td>
+												<td><b>0.32</b></td>
+												<td><b>13.03</b></td>
+											</tr>
+											<tr>
+												<td>High Smile</td>
+												
+												<td>0.7771 ± 0.0198 </td>
+												<td>1.032 ± 0.388</td>
+												<td>0.59</td>
+												<td>15.05 </td>
+											</tr>
+											
+										</tbody>
+									</table>
+									
+								</div>
+								
+							</div>
+							
+							<h3>Qualitative</h3>
+							<p>The figures bellow show the control process where successive frames are each an independent generation of a new face 
+								after latent vector manipulation informed by the classifiers gradients conditioned on the previous face. 
+								On the right of the faces one can see the classifiers predicted probability of each target expression (left cheeks in and right
+								mouth open). One can see that successive generations are temporally and physically valid which allows intermediate generations
+								to be used as animation keyframes for facial expression changes. 
+							</p>
+							<div class="row">
+							<span class="image"><img src="images/output.gif" alt="" /></span>
+							<span class="image"><img src="images/output4.gif" alt="" /></span>
+							<span class="image"><img src="images/output2.gif" alt="" /></span>
+							<span class="image"><img src="images/output3.gif" alt="" /></span>
+							</div>
+							<h4>Live demo</h4>
+							<p>Bellow one can see a live render of some of the final generated results of PCE-GAN. The interactive demonstration 
+								contains 10 faces - first the triangle mesh obtained by Poisson surface reconstruction followed by the point cloud 
+								that PCE-GAN generates (used in the prior surface reconstruction).	
+							</p>
+							<h4>Controls:</h4>
+							<ul>
+								
+								<li>Mouse left click and drag to rotate.</li>
+								<li> Scroll wheel to zoom. </li>
+								<li>N or n to get the next result.</li>
+							</ul> 
+							
+							
+							<!-- <span class="image"><img src="images/controlGANface.gif" alt="" /></span>
+							<span class="image"><img src="images/controlGANface.gif" alt="" /></span> -->
+							<!-- <span class="image"><img src="images/controlGANface.gif" alt="" /></span> -->
+							<div id="threejs" style="position:relative; width: 100%; height: 100%;"></div>
+							<h2>Future Work</h2>
 						</div>
+
 					</section>
 
 			</div>

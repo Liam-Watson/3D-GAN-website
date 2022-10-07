@@ -27,7 +27,12 @@ section, summary, time, mark, audio, video {
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
-
+:root {
+	--c1: #2A363B;
+	--c2: #E84A5F;
+	--c3: #FF847C;
+	--c4: #FECEA8;
+}
 body {
 	line-height: 1;
 }
@@ -98,7 +103,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #312450;
+		background: var(--c1);
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -115,7 +120,7 @@ input, select, textarea {
 /* Type */
 
 	body, input, select, textarea {
-		color: rgba(255, 255, 255, 0.55);
+		color: rgb(255, 255, 255);
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: 16.5pt;
 		font-weight: normal;
@@ -197,10 +202,10 @@ input, select, textarea {
 		}
 
 			h1.major:after {
-				background-image: -moz-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -webkit-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -ms-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: linear-gradient(to right, #5e42a6, #b74e91);
+				background-image: -moz-linear-gradient(to right,  var(--c2),  var(--c3));
+				background-image: -webkit-linear-gradient(to right,  var(--c2),  var(--c3));
+				background-image: -ms-linear-gradient(to right,  var(--c2),  var(--c3));
+				background-image: linear-gradient(to right,  var(--c2),  var(--c3));
 				-moz-transition: max-width 0.2s ease;
 				-webkit-transition: max-width 0.2s ease;
 				-ms-transition: max-width 0.2s ease;
@@ -2536,27 +2541,27 @@ input, select, textarea {
 			}
 /* All these Luc */
 				.wrapper.style1 .icon.major:before {
-					color: #5e42a6;
+					color: var(--c1);
 				}
 
 				.wrapper.style1-alt .icon.major:before {
-					color: #493382;
+					color:  var(--c1);
 				}
 
 				.wrapper.style2 .icon.major:before {
-					color: #5052b5;
+					color:  var(--c1);
 				}
 
 				.wrapper.style2-alt .icon.major:before {
-					color: #3e4094;
+					color:  var(--c1);
 				}
 
 				.wrapper.style3 .icon.major:before {
-					color: #b74e91;
+					color:  var(--c1);
 				}
 
 				.wrapper.style3-alt .icon.major:before {
-					color: #953d75;
+					color:  var(--c1);
 				}
 
 /* Image */
@@ -3022,7 +3027,7 @@ input, select, textarea {
 				-webkit-transition: opacity 1s ease;
 				-ms-transition: opacity 1s ease;
 				transition: opacity 1s ease;
-				background: rgba(49, 36, 80, 0.9);
+				background: rgba(218, 172, 86, 0.9);
 				content: '';
 				display: block;
 				height: 100%;
@@ -3236,31 +3241,31 @@ input, select, textarea {
 			}
 
 		.wrapper.alt {
-			background-color: #261c3e;
+			background-color:  var(--c1);
 		}
-
+/* Luc */
 		.wrapper.style1 {
-			background-color: #636166;
+			background-color:  var(--c1);
 		}
 
 		.wrapper.style1-alt {
-			background-color: #493382;
+			background-color:  var(--c1);
 		}
 
 		.wrapper.style2 {
-			background-color: #636166;
+			background-color:  var(--c1);
 		}
 
 		.wrapper.style2-alt {
-			background-color: #636166;
+			background-color:  var(--c1);
 		}
 
 		.wrapper.style3 {
-			background-color: #636166;
+			background-color:  var(--c1);
 		}
 
 		.wrapper.style3-alt {
-			background-color: #636166;
+			background-color:  var(--c1);
 		}
 
 		.wrapper.fullscreen {
@@ -3370,7 +3375,7 @@ input, select, textarea {
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		background-color: #5e42a6;
+		background-color:  var(--c1);
 		cursor: default;
 		padding: 1.75em 2em;
 	}
@@ -3524,7 +3529,7 @@ input, select, textarea {
 /* Luc */
 	#sidebar {
 		padding: 2.5em 2.5em 0.5em 2.5em ;
-		background: #636166;
+		background:  var(--c1);
 		cursor: default;
 		height: 100vh;
 		left: 0;
@@ -3761,14 +3766,14 @@ input, select, textarea {
 			}
 
 			#sidebar nav a:before {
-				background: #3c2c62;
+				background:  var(--c1);
 			}
 
 			#sidebar nav a:after {
-				background-image: -moz-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -webkit-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -ms-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: linear-gradient(to right, #5e42a6, #b74e91);
+				background-image: -moz-linear-gradient(to right, var(--c2),  var(--c3));
+				background-image: -webkit-linear-gradient(to right,  var(--c2),  var(--c3));
+				background-image: -ms-linear-gradient(to right, var(--c2),  var(--c3));
+				background-image: linear-gradient(to right,  var(--c2),  var(--c3));
 				-moz-transition: max-width 0.2s ease;
 				-webkit-transition: max-width 0.2s ease;
 				-ms-transition: max-width 0.2s ease;
