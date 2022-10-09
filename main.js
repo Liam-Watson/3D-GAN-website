@@ -19,6 +19,11 @@ renderer.setClearColor( 0x000000, 0 ); // the default
 document.getElementById("threejs").appendChild(renderer.domElement);
 const controls = new OrbitControls( camera, renderer.domElement );
 const controls2 = new OrbitControls( light, renderer.domElement );
+controls.enableZoom = false;
+controls2.enableZoom = false;
+// controls.autoRotate = true;
+// controls2.autoRotate = true;
+
 
 const geometry = new THREE.BoxGeometry( 1, 1, 1 );
 // const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
@@ -26,38 +31,60 @@ const material = new THREE.MeshLambertMaterial( { color: 0x808080 } );
 let mesh = new THREE.Mesh( geometry, material );
 // scene.add( cube );
 const loader = new PLYLoader();
+
 // let face = cube;
-loader.load("face.ply", obj => {
-    obj.computeVertexNormals();
-    mesh = new THREE.Mesh(obj, material)
-    mesh.scale.x = 17;
-    mesh.scale.y = 17;
-    mesh.scale.z = 17;
 
-    scene.add(mesh);
-
-    // mesh.rotation.x += 0.01;
-    // mesh.rotation.y += 0.01;
-
-    // renderer.render( scene, camera );
-});
+function load(path){
+    loader.load(path, obj => {
+        obj.computeVertexNormals();
+        mesh = new THREE.Mesh(obj, material)
+        mesh.scale.x = 17;
+        mesh.scale.y = 17;
+        mesh.scale.z = 17;
+        scene.add(mesh);
+    });
+}
 
 camera.position.z = 5;
 
 function animate() {
     requestAnimationFrame( animate );
-
-    // mesh.rotation.x += 0.1;
-    // mesh.rotation.y += 0.005;
-    // scene.remove(mesh);
-    // scene.add(mesh);
-    // mesh.matrixWorldNeedsUpdate = true;
-    // mesh.updateMatrix();
-    // console.log(mesh.rotation.x);
+    // controls.update()
+    // controls2.update()
     renderer.render( scene, camera );
 };
 document.getElementsByTagName("canvas")[0].style.width = "100%"
 document.getElementsByTagName("canvas")[0].style.height = "100%"
+
+document.addEventListener("keydown", onDocumentKeyDown, false);
+
+document.addEventListener("keyup", (e) =>{
+    console.log(e)
+    if(e.key == 'Shift'){
+        controls.enableZoom = false;
+        controls2.enableZoom = false;
+        controls.update()
+        controls2.update()
+    }
+}, false);
+
+let counter = 0;
+const paths = ["images/models/untitled.ply", "face.ply"];
+load(paths[counter])
+function onDocumentKeyDown(event) {
+    var keyCode = event.which;
+
+    if(keyCode == 78){
+        counter = (counter + 1) % paths.length;
+        scene.remove(mesh);
+        load(paths[counter])
+        animate();
+    }else if(keyCode == 16){
+        controls.enableZoom = true;
+        controls2.enableZoom = true;
+    }
+    
+}
 animate();
 
 
