@@ -80,7 +80,7 @@
 								and as such are able to provide a more practical evaluation of the models performance.
 							</p>
 							<h3>Quantitative Results</h3>
-							<p>The below table shows the quantatative metrics for results generated before adding any latent vector control.
+							<p>The below table shows the quantitative metrics for results generated before adding any latent vector control.
 								Included in these results are two comparison papers namely CoMA autoencoder and MeshGAN. 
 							</p>
 							<div class="table-wrapper">
@@ -121,6 +121,12 @@
 								</div>
 								
 							</div>
+							<p>The bellow table displays the quantitative metrics for various expressions that PCE-GAN can generate. These results
+								show that there is some variation in the generated point clouds. However, all metrics are still within the range 
+								of acceptability. The best performing facial expression is the mouth open expression which is likely due to
+								the large structural changes that occur in the mouth region when the mouth is opened differentiating such expressions 
+								from other expressions more easily.
+							</p>
 							<div class="table-wrapper">
 								<div class="alt">
 									<table>
@@ -191,7 +197,9 @@
 							<h4>Live demo</h4>
 							<p>Bellow one can see a live render of some of the final generated results of PCE-GAN. The interactive demonstration 
 								contains 10 faces - first the triangle mesh obtained by Poisson surface reconstruction followed by the point cloud 
-								that PCE-GAN generates (used in the prior surface reconstruction).	
+								that PCE-GAN generates (used in the prior surface reconstruction).	The first displayed face is one created by manually 
+								adjusting surface reconstruction parameters to produce much better shading, topology and overall appearance (eyes are replaced by spheres) - 
+								this is done to demonstrate the practical use of PCE-GAN as an expert would be able to quickly generate such results.
 							</p>
 							<h4>Controls:</h4>
 							<ul>
@@ -207,6 +215,46 @@
 							<!-- <span class="image"><img src="images/controlGANface.gif" alt="" /></span> -->
 							<div id="threejs" style="position:relative; width: 100%; height: 100%;"></div>
 							<h2>Future Work</h2>
+							<h4>Surface Reconstruction</h4>
+							Reconstruction of a mesh from the point set has proven to be a
+							large flaw of the point set generation method. In further works,
+							investigations into including point set normals in the training and
+							generated results. This inclusion would enable both more detailed
+							generation and accurate surface reconstruction.
+							<h4>GAN Improvements</h4>
+							The current formulation of PCE-GAN gives rise to spurious points
+							in the generated point set. Further investigations into more advanced GAN architectures such as WGAN or WGAN-GP architectures may reduce the noisy results as such techniques have been
+							proven to outperform DCGANs in most applications.
+							<h4> Training Data</h4>
+							For future work where detailed identity is important, higher fidelity
+							training data is recommended as down sampling to 5023 points
+							reduces the identity information dramatically while retaining the
+							expression information. In order to increase the likelihood of high
+							frequency detail (such as wrinkles) being included in generated
+							results a higher number of training points is required. A larger
+							training set will likely improve the quality of synthetic point sets,
+							enabling a smaller learning rate - this does require more computational and memory resources. When extending the dataset one
+							should include an increased variety of identities to broaden the
+							controllable GANs ability to generate unseen faces. Additionally,
+							the inclusion of expression to expression time series data would
+							increase the models ability to produce temporally valid expressions
+							and enable the model to better impose control over a variety of
+							initial starting expressions.
+							<h4> Larger Degree of Feature Control </h4>
+							Future work may choose to increase the dimension of feature control from expression to identity features. Such an investigation
+							would require a classifier trained on detailed face property labelling
+							such as the size of facial expressions, age, gender, etc. Training data
+							for such a model may be obtained by means of facial scans or use
+							of manually constructed data that is often used in content creation.
+							<h4> Data Representations </h4>
+							It has not been proven that point set data is the most suitable representation for face generation. Further investigations may find
+							an encoding of point set data more easily learnable by a GAN
+							such as different coordinate systems which may emphasise relative
+							point densities, embeddings of points into a space that emphasises
+							a specific attribute of the data or a voxel approach to emphasise
+							volumetric consistency. Different data representations my additionally aid surface reconstruction with volumetric information or
+							a reduction of spurious points due to a higher degree of spacial
+							accuracy.
 						</div>
 
 					</section>
