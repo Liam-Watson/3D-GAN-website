@@ -51,14 +51,102 @@
 							<h2>Evaluation</h2>
 							<p>3DEC-GAN was evaluated using a quantitative approach where metrics were calculated using output from the generator and a testing set of real data. The results were then compared against the Simple DC GAN, in addtion to MeshGAN and CoMA, the leading models for 3D face generation and 3DEC-GANs competitors.
 								The metrics were chosen to match the evaluation of MeshGAN, such that a comparison could be made, these being Generalisation, Specificity and FID. Generalisation and Specificity use Euclidian distance in 3D space to compare how alike two faces are and subsequently probe the generator's latent space by comparing against real samples.
-								FID on the otherhand, is an image based metric inherited from GANs for image generation and was used by rasterising the 3D faces into images to be compared. The results can be seen in the graphs below.
+								FID on the otherhand, is an image based metric inherited from GANs for image generation and was used by rasterising the 3D faces into images to be compared. The results can be seen in the tables and graphs below.
 							</p>
+							<p>Table showing the metrics for 3DEC-GAN averaged over all the expressions and the results for MeshGAN and CoMA:</p>
+							<div class="table-wrapper">
+								<div class="alt">
+									<table>
+										<thead>
+											<tr>
+												<th>Method</th>
+												<th>Generalization (mm)</th>
+												<th>Specificity (mm)</th>
+												<th>FID</th>
+											</tr>
+											
+										</thead>
+										<tbody>
+											<tr>
+												<td>CoMA</td>
+												<td>0.606±0.203</td>
+												<td>1.899±0.272</td>
+												<td>22.43</td>
+											</tr>
+											<tr>
+												<td>MeshGAN</td>
+												<td>0.605±0.264</td>
+												<td>1.536±0.153</td>
+												<td>13.59</td>
+											</tr>
+											<tr>
+												<td>3DEC-GAN</td>
+												<td>0.917±0.073</td>
+												<td>0.821±0.025</td>
+												<td>18.22</td>
+											</tr>
+											
+										</tbody>
+									</table>
+									
+								</div>
+								
+							</div>
+							<p>Table showing the per-expression results:</p>
+							<div class="table-wrapper">
+								<div class="alt">
+									<table>
+										<thead>
+											<tr>
+												<th>Expression</th>
+												<th>Generalization (mm)</th>
+												<th>Specificity (mm)</th>
+												<th>FID</th>
+											</tr>
+											
+										</thead>
+										<tbody>
+											<tr>
+												<td>Neutral</td>
+												<td>0.954±0.098</td>
+												<td>0.849±0.011</td>
+												<td>17.69±0.726</td>
+											</tr>
+											<tr>
+												<td>Bare Teeth</td>
+												<td>0.879±0.050</td>
+												<td>0.806±0.010</td>
+												<td>19.77±0.519</td>
+											</tr>
+											<tr>
+												<td>Cheeks In</td>
+												<td>1.020±0.088</td>
+												<td>0.851±0.029</td>
+												<td>20.83±0.654</td>
+											</tr>
+											<tr>
+												<td>Mouth Open</td>
+												<td>0.815±0.055</td>
+												<td>0.777±0.049</td>
+												<td>14.60±0.949</td>
+											</tr>
+											
+										</tbody>
+									</table>
+									
+								</div>
+								
+							</div>
+
+
+							<p>Graph acting as a summary of the results seen in the above tables:</p>
 							<span class="image fit"><img src="images/3DEC-GAN_results.png" alt="" /></span>
 							<p>Lastly, a brief qualitative inspection was perfromed on the generated samples. The results of which can be seen below.</p>
 							<span class="image fit"><img src="images/3DEC-GAN_faces.png" alt="" /></span>
 							<h2>Conclusion</h2>
 							<p>It can be seen from the quantitative results that 3DEC-GAN prefromed well compared to MeshGAN, CoMA and the Simple DC GAN. However, for various reasons the qualitative inspection shows that the output samples are far too noisy and disfigured to be usable. The shows that the model has some significant shortcommings. 
 								However, despite the fact that the model has failed in reaching its goal of being usable, it still stands as a strong base from which to investigate more complex architectures. 
+								Lastly, it was shown that 3DEC-GAN was best able to produce the Mouth Open expression with the Cheeks In expression showing the poorest performance.
 							</p>
 						</div>
 					</section>
