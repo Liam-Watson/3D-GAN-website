@@ -30,7 +30,7 @@
 				<nav>
 					<ul>
 						<li><a href="index.html">Home</a></li>
-						<li><a href="generic.html" class="active">Controllable GAN</a></li>
+						<li><a href="controllalbe.html" class="active">Controllable GAN</a></li>
 						<li><a href="conditional.html">Conditional GAN</a></li>
 						<li><a href="progressive.html">Progressive GAN</a></li>
 					</ul>
@@ -194,7 +194,8 @@
 							<span class="image"><img src="images/output2.gif" alt="" /></span>
 							<span class="image"><img src="images/output3.gif" alt="" /></span>
 							</div>
-							<h4>Live demo</h4>
+							<hr>
+							<h2>Live demo</h2>
 							<p>Bellow one can see a live render of some of the final generated results of PCE-GAN. The interactive demonstration 
 								contains 10 faces - first the triangle mesh obtained by Poisson surface reconstruction followed by the point cloud 
 								that PCE-GAN generates (used in the prior surface reconstruction).	The first displayed face is one created by manually 
@@ -214,19 +215,41 @@
 							<span class="image"><img src="images/controlGANface.gif" alt="" /></span> -->
 							<!-- <span class="image"><img src="images/controlGANface.gif" alt="" /></span> -->
 							<div id="threejs" style="position:relative; width: 100%; height: 100%;"></div>
+								<hr>
+							<h2>Conclusion</h2>
+							In this paper we have demonstrated that point set data can be used
+							for 3D face generation using GANs. We have proven that such a
+							GAN can be used in combination with a classifier in a controllable
+							GAN architecture to generate expression controlled faces without
+							loss of quality or stability. Further it was demonstrated that the
+							control step can improve the quality of synthetic faces. Generated
+							faces from PCE-GAN have been proven to out perform previous
+							works in some quantitative measures, expressing a high level of
+							validity and variation. We have discussed the problems associated
+							with PCE-GANs reliance on a processing surface reconstruction
+							step that can produce undesirable meshes, however, such problems
+							can be mitigated with little manual intervention and tuning. We
+							have proven that PCE-GAN has a well defined and feature rich
+							input latent space. Through experiments we have demonstrated
+							that PCE-GAN is stable during training and feature manipulation.
+							It was proven that the architecture of PCE-GAN is linear in both
+							space and time complexity. Additionally, we have demonstrated that
+							expression manipulation is temporally consistent and identity disentangled which means that intermediate expressions can be used
+							as expression animations for a single character facial animations.
+							
 							<h2>Future Work</h2>
-							<h4>Surface Reconstruction</h4>
-							Reconstruction of a mesh from the point set has proven to be a
+							<h3>Surface Reconstruction</h3>
+							<p>Reconstruction of a mesh from the point set has proven to be a
 							large flaw of the point set generation method. In further works,
 							investigations into including point set normals in the training and
-							generated results. This inclusion would enable both more detailed
-							generation and accurate surface reconstruction.
-							<h4>GAN Improvements</h4>
-							The current formulation of PCE-GAN gives rise to spurious points
+							generated results may prove highly beneficial. This inclusion would enable both more detailed
+							generation and accurate surface reconstruction.</p>
+							<h3>GAN Improvements</h3>
+							<p>The current formulation of PCE-GAN gives rise to spurious points
 							in the generated point set. Further investigations into more advanced GAN architectures such as WGAN or WGAN-GP architectures may reduce the noisy results as such techniques have been
-							proven to outperform DCGANs in most applications.
-							<h4> Training Data</h4>
-							For future work where detailed identity is important, higher fidelity
+							proven to outperform DCGANs in most applications.</p>
+							<!-- <h3> Training Data</h3> -->
+							<!-- <p>For future work where detailed identity is important, higher fidelity
 							training data is recommended as down sampling to 5023 points
 							reduces the identity information dramatically while retaining the
 							expression information. In order to increase the likelihood of high
@@ -239,22 +262,22 @@
 							the inclusion of expression to expression time series data would
 							increase the models ability to produce temporally valid expressions
 							and enable the model to better impose control over a variety of
-							initial starting expressions.
-							<h4> Larger Degree of Feature Control </h4>
-							Future work may choose to increase the dimension of feature control from expression to identity features. Such an investigation
+							initial starting expressions.</p> -->
+							<h3> Larger Degree of Feature Control </h3>
+							<p>Future work may choose to increase the dimension of feature control from expression to identity features. Such an investigation
 							would require a classifier trained on detailed face property labelling
 							such as the size of facial expressions, age, gender, etc. Training data
 							for such a model may be obtained by means of facial scans or use
-							of manually constructed data that is often used in content creation.
-							<h4> Data Representations </h4>
-							It has not been proven that point set data is the most suitable representation for face generation. Further investigations may find
+							of manually constructed data that is often used in content creation.</p>
+							<h3> Data Representations </h3>
+							<p>It has not been proven that point set data is the most suitable representation for face generation. Further investigations may find
 							an encoding of point set data more easily learnable by a GAN
-							such as different coordinate systems which may emphasise relative
-							point densities, embeddings of points into a space that emphasises
-							a specific attribute of the data or a voxel approach to emphasise
+							such as different coordinate systems which may emphasize relative
+							point densities, embeddings of points into a space that emphasizes
+							a specific attribute of the data or a voxel approach to emphasize
 							volumetric consistency. Different data representations my additionally aid surface reconstruction with volumetric information or
 							a reduction of spurious points due to a higher degree of spacial
-							accuracy.
+							accuracy.</p>
 						</div>
 
 					</section>
@@ -265,7 +288,7 @@
 			<footer id="footer" class="wrapper alt">
 				<div class="inner">
 					<ul class="menu">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<li>&copy; PCE-GAN. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul>
 				</div>
 			</footer>

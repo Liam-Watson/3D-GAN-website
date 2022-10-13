@@ -38,9 +38,9 @@ function load(path){
     loader.load(path, obj => {
         obj.computeVertexNormals();
         mesh = new THREE.Mesh(obj, material)
-        mesh.scale.x = 17;
-        mesh.scale.y = 17;
-        mesh.scale.z = 17;
+        mesh.scale.x = 10;
+        mesh.scale.y = 10;
+        mesh.scale.z = 10;
         scene.add(mesh);
     });
 }
